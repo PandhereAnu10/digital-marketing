@@ -742,7 +742,7 @@ form input[type="text"]:focus {
 
 #footer{
     display: flex;
-    background-image: url(/Assets/NoPath\ -\ Copy.svg);
+    background-image: url(NoPath\ -\ Copy.svg);
     height: 310px;
     justify-content: center;
     align-items: center;
