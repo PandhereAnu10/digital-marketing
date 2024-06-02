@@ -1,0 +1,761 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://use.typekit.net/ztv1cyy.css");
+
+/* Body */
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+
+.container{
+    height: 600px;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.container img{
+    width: 387px;
+    height: 537px;
+}
+
+.hero-text h2{
+    top: 312px;
+    left: 376px;
+    width: 614px;
+    margin-bottom: 8px;
+    font-size: 30px;
+    color: #FF3147;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Cormorant SC", serif;
+}
+
+.hero-text h1{
+    top: 312px;
+    left: 376px;
+    width: 614px;
+    height: 140px;
+    font-size: 3.3rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Cormorant SC", serif;
+}
+
+.hero-text p{
+    top: 502px;
+    left: 375px;
+    width: 584px;
+    height: 83px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn_contact {
+    position: relative;
+    width: 160px;
+    height: 50px;
+    background: #FF3147;
+    padding: 1em 1.1em 1.1em;
+    margin: 8px;
+    border: none;
+    border-radius: 2px;
+    opacity: 1;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1.4px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn_contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.btn_contact:hover::before {
+    left: 0;
+}
+
+.btn_contact span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_contact:hover{
+    color: #FF3147;
+    border: 2px solid #FF3147;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Popoup-Form */
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-family: "golos-text", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 25px;
+    color: #2D3142;
+    text-align: left;
+    letter-spacing: 0.4px;
+
+}
+
+form input[type="email"],
+form input[type="text"] {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+    color: #6F718F99;
+    font-family: "golos-text", sans-serif;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    margin-bottom: 35px;
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus {
+    border-bottom: 2px solid #FF3147;
+    color: #000000;
+}
+
+.form-container input:focus::placeholder{
+    transform: translateY(-12px);
+}
+
+.name-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.name-container input[type="text"] {
+    width: calc(50% - 5px);
+    color: #000000;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-container input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #FF3366;
+    border-radius: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label:before {
+    border-color: #FF3366;
+    background-color: #FF3366;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    font-family: "golos-text", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.4px;
+    color: #616678;
+    line-height: 20px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.btn_submit {
+    width: 100%;
+    padding: 10px;
+    background: #FF3147;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn_submit:hover {
+    background: #d8283b;
+}
+
+/* Services */
+
+#services{
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFAFA;
+    padding: 60px 100px 60px 60px;
+}
+
+#services h2{
+    font-family: "Cormorant SC", serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FF3147;
+    margin-bottom: 8px;
+}
+
+.services-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.services-content h1{
+    font-family: "Cormorant SC", serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.services-content p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #000000;
+    width: 784px;
+}
+
+.wrapper{
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    flex: 0 0 auto;
+    width: 300px;
+    height: 426px;
+    margin-right: 40px;
+    padding: 2rem, 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease-in-out;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pre-btn,
+.nxt-btn{
+    border: none;
+    width: 10vw;
+    height: 60%;
+    top: 150%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 9;
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn{
+    right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img{
+    opacity: 1;
+}
+
+.collection-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.collection{
+    position: relative;
+}
+
+.collection:nth-child(3){
+    grid-column: span 2;
+    margin-bottom: 10px;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #FF3147;
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+.card:hover:before{
+    opacity: 1;
+}
+
+.card .main-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info{
+    position: absolute; /* Changed from relative to absolute */
+    top: 20%;
+    bottom: 20%;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+    text-align: center;
+    
+}
+
+.card:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.card .info img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.card .info h4{
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card .info p{
+    color: #fff;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 15px;
+}
+
+.card .info .btn_read{
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #FF3147;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Featured */
+
+#featured{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#featured h2{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Cormorant SC", serif;
+    color: #FF3147;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#featured h1{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Cormorant SC", serif;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.featured-container{
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.featured-counter{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.featured-counter .icon-featured{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+}
+
+.featured-counter h4{
+    font-size: 15px;
+    font-weight:500;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.featured-counter p{
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+/* Our-Project */
+
+#our-project{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#our-project h2{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Cormorant SC", serif;
+    color: #FF3147;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#our-project h1{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Cormorant SC", serif;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.project-container{
+    display: flex;
+    width: 90%;
+}
+
+.img-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.img-container img{
+    width: 600px;
+    height: 467px;
+}
+
+.project-card-container{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project-card{
+    background-color: #F6F6F6;
+    padding: 25px;
+    border-bottom: 1px solid #cdcdcd;
+    cursor: pointer;
+}
+
+.project-card h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: medium;
+    font-size: 20px;
+    color: #000000;
+}
+
+.project-card p{
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+}
+
+.project-card:hover,
+.project-card.active {
+    background-color: #FF3147; /* Change background color on hover and when active */
+    color: #FFFFFF; /* Change text color on hover and when active */
+}
+
+.project-card:hover h3,
+.project-card.active h3 {
+    color: #FFFFFF; /* Change heading text color on hover and when active */
+}
+
+.project-card:hover p,
+.project-card.active p {
+    color: #FFFFFF; /* Change paragraph text color on hover and when active */
+}
+
+/* Counter-Section */
+
+#counter{
+    background: #FAFAFA;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#counter h2{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Cormorant SC", serif;
+    color: #FF3147;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#counter h1{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Cormorant SC", serif;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card-container{
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+}
+
+.card-counter{
+    background: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-counter:hover {
+    transform: scale(1.05); /* Scale up effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.card-counter .icon{
+    width: 29px;
+    height: 34px;
+    margin-bottom: 8px;
+}
+
+.card-counter h4{
+    font-size: 50px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.card-counter p{
+    font-size: 18px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+/* Client Feedback */
+
+#testimonial{
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px 20px 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonial h2{
+    font-family: "Cormorant SC", serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FF3147;
+    margin-bottom: 8px;
+}
+
+#testimonial h1{
+    font-family: "Cormorant SC", serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#testimonial p{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: #000000;
+    text-align: left;
+    padding-left: 170px;
+    padding-right: 170px;
+    background-image: url(/Assets/Quotemarks-left.svg);
+    background-repeat: no-repeat;
+    background-position: 13% -25%;
+    margin-top: 60px;
+}
+
+.author{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 60px;
+    padding-left: 230px;
+}
+
+.author-name{
+    color: #FF3147;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+}
+
+.company{
+    color: #808080;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Footer */
+
+#footer{
+    display: flex;
+    background-image: url(/Assets/NoPath\ -\ Copy.svg);
+    height: 310px;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .footer-content{
+    display: flex;
+    padding: 45px;
+}
+
+.footer-content .footer-img{
+    background: transparent;
+    width: 900px;
+    height: 56px;
+    opacity: 1;
+}
