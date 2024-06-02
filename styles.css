@@ -742,7 +742,7 @@ form input[type="text"]:focus {
 
 #footer{
     display: flex;
-    background-image: url(NoPath.svg);
+    background: #FF3147;
     height: 310px;
     justify-content: center;
     align-items: center;
